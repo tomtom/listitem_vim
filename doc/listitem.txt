@@ -1,0 +1,113 @@
+*listitem.txt*      A list item text object (map: ii)
+                    Author: Tom Link, micathom at gmail com
+
+This plugin provides a listitem textobject ii (see |g:listitem#map|) with 
+additional support for the tinykeymap plugin to move and shift items in a list.
+
+Features:
+    - Use the listitem textobject (default: ii) to select of edit the current 
+      list item.
+    - Use the tinykeymap listitem mode (default: <Leader>mii) to move and shift 
+      list item.
+
+
+-----------------------------------------------------------------------
+Install~
+
+To install the vimball, edit the vba file and type: >
+
+    :so %
+
+See :help vimball for details.
+
+To install from github, please use a plugin manager like enable_vim, pathogen, 
+VAM, Vundle, NeoBundle, vim-plug, vim-unbundle etc. or simply git.
+
+Some features requires tinykeymap_vim to be installed:
+https://github.com/tomtom/tinykeymap_vim
+
+Also available via git: http://github.com/tomtom/listitem_vim
+
+
+========================================================================
+Contents~
+
+        g:listitem_filetypes ................... |g:listitem_filetypes|
+        g:listitem#map ......................... |g:listitem#map|
+        g:listitem#ft_def ...................... |g:listitem#ft_def|
+        listitem#Install ....................... |listitem#Install()|
+        listitem#ListItemTextObject ............ |listitem#ListItemTextObject()|
+        listitem#SelectListItem ................ |listitem#SelectListItem()|
+        listitem#GetDef ........................ |listitem#GetDef()|
+        listitem#MatchList ..................... |listitem#MatchList()|
+        g:tinykeymap#map#listitem#options ...... |g:tinykeymap#map#listitem#options|
+        tinykeymap#listitem#ShiftListItem ...... |tinykeymap#listitem#ShiftListItem()|
+        tinykeymap#listitem#MoveListItem ....... |tinykeymap#listitem#MoveListItem()|
+
+
+========================================================================
+plugin/listitem.vim~
+
+                                                    *g:listitem_filetypes*
+g:listitem_filetypes           (default: ['text', 'markdown', 'markdown.pandoc', 'rst', 'viki'])
+
+
+========================================================================
+autoload/listitem.vim~
+
+                                                    *g:listitem#map*
+g:listitem#map                 (default: 'ii')
+
+                                                    *g:listitem#ft_def*
+g:listitem#ft_def              (default: {...})
+
+                                                    *listitem#Install()*
+listitem#Install(bufferlocal)
+
+                                                    *listitem#ListItemTextObject()*
+listitem#ListItemTextObject()
+    " Create a new text-object ii that works on a inner list item. Once the 
+    " maps are enabled, users may, e.g., visually select an item in a list 
+    " by typing vii. See |listitem#SelectListItem()| for a definition of what is 
+    " considered a list item.
+
+                                                    *listitem#SelectListItem()*
+listitem#SelectListItem(lnum)
+    Visually select the list item at line lnum.
+    A list item also contains all its child items. E.g. in a list like:>
+
+      1. Venenatis diam dignissim dui. Praesent risus.
+      2. Tincidunt facilisis, est nisi pellentesque ligula.
+          a. Adipiscing dui non quam.
+          b. Duis posuere tortor.
+      3. Massa lorem, dignissim at, vehicula et.
+
+    If the cursor is placed on item #2, this function also selects the 
+    items a and b.
+
+                                                    *listitem#GetDef()*
+listitem#GetDef()
+
+                                                    *listitem#MatchList()*
+listitem#MatchList(lnum)
+
+
+========================================================================
+autoload/tinykeymap/map/listitem.vim~
+
+                                                    *g:tinykeymap#map#listitem#options*
+g:tinykeymap#map#listitem#options (default: {...})
+
+
+========================================================================
+autoload/tinykeymap/listitem.vim~
+
+                                                    *tinykeymap#listitem#ShiftListItem()*
+tinykeymap#listitem#ShiftListItem(direction)
+
+                                                    *tinykeymap#listitem#MoveListItem()*
+tinykeymap#listitem#MoveListItem(direction)
+
+
+
+vim:tw=78:fo=w2croql:isk=!-~,^*,^|,^":ts=8:ft=help:norl:

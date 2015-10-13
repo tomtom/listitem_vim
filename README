@@ -1,0 +1,16 @@
+This plugin provides a listitem textobject ii (see |g:listitem#map|) with 
+additional support for the tinykeymap plugin to move and shift items in a list.
+
+Features:
+    - Use the listitem textobject (default: ii) to select of edit the current 
+      list item.
+    - Use the tinykeymap listitem mode (default: <Leader>mii) to move and shift 
+      list item.
+
+
+-----------------------------------------------------------------------
+
+Status:  Experimental
+Install: See http://github.com/tomtom/vimtlib/blob/master/INSTALL.TXT
+See http://github.com/tomtom for related plugins.
+
