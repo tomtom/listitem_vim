@@ -1,7 +1,7 @@
 " @Author:      Tom Link (mailto:micathom AT gmail com?subject=[vim])
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
-" @Last Change: 2015-10-13.
-" @Revision:    21
+" @Last Change: 2015-10-14.
+" @Revision:    23
 
 if !exists('g:tinykeymap#map#listitem#options')
     " :read: let g:tinykeymap#map#listitem#options = {...}   "{{{2
